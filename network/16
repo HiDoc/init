@@ -1,1 +1,4 @@
-echo "46.19.122.85\tintra.42.fr" > /etc/hosts
+#!/bin/sh
+# Pour cela il suffit de rajouter avec la commande ci-dessous l'adresse 
+# ip suivi de l'adresse de sortie dans le fichier de configuration
+sudo echo "46.19.122.85\tintra.42.fr" > /etc/hosts

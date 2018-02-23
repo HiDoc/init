@@ -1,2 +1,2 @@
 #!/bin/sh
-ifconfig | grep "^[a-zA-Z0-9]*: " | cut -f 1 -d :
+ifconfig | grep "^[a-zA-Z0-9]*: " | cut -f 1 -d : | tr "\n" " "

@@ -1,1 +1,2 @@
+#L'hebergeur de slash16 est Amazon AWS
 whois Slash16.org | grep "Name Server"
