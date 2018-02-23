@@ -1,0 +1,3 @@
+#!bin/sh
+# Les cles RSA autorisees a se connecter se trouvent dans le fichier ci dessous :
+cat ~/.ssh/authorized_keys

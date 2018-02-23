@@ -1,0 +1,5 @@
+#!/bin/bash
+# lancer la commande ci-dessous si la regle pour le ssh sur le port 22
+# n'existe pas
+# sudo iptables -A INPUT -p tcp -i eth0 --dport ssh -j ACCEPT
+sudo iptables -P INPUT DROP

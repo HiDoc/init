@@ -1,0 +1,2 @@
+#!/bin/sh
+ps ax | grep /usr/sbin/sshd | head -1
