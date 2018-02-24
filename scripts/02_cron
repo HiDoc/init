@@ -1,0 +1,2 @@
+#!/bin/sh
+crontab 0 4 * * 0 sh 02 > /dev/null 2>&1

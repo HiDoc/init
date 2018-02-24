@@ -1,5 +1,6 @@
+#!/bin/sh
 {
-	sudo touch /var/log/update_script.log
 	sudo apt-get update 
-	sudo apt-get upgrade -Y
-}> /var/log/update_script.log
+	sudo apt-get upgrade -y
+}> /tmp/update_script.log
+sudo mv /tmp/update_script.log /var/log/update_script.log

@@ -1,0 +1,7 @@
+#!/bash/sh
+if [ "$#" -ne 1 ]
+	 then
+	 	echo "Invalid number of arguments"
+	 else
+		sudo ls -plhS $1 | grep -v /
+fi

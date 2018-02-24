@@ -1,0 +1,5 @@
+#!/bin/sh
+sudo apt-get update && apt-get install inotify-tools > /dev/null 2>&1
+while inotifywait -e close_write /etc/crontab
+	do echo "Crontab has been modified." | mailx -s "Notification iNotify" root@localhost
+done
