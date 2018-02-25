@@ -1,5 +1,18 @@
-#!/bin/sh
-sudo apt-get update && apt-get install inotify-tools > /dev/null 2>&1
-while inotifywait -e close_write /etc/crontab
-	do echo "Crontab has been modified." | mailx -s "Notification iNotify" root@localhost
-done
+#! /bin/sh
+
+#A effectuer pour la crontab
+# crontab -e
+# 0 0 * * * /home/04 
+
+#VAR
+path=/etc/crontab
+
+#Ce programme est a executer une fois a vide avant d'etre effectif. Il doit renvoyer 'checknew': No such file or directory au premier lancement.
+
+mv checknew checkold
+md5sum $path > ./checknew
+CHECKSUM=$(diff checknew checkold)
+
+if [ "x$CHECKSUM" != "x" ]; then
+	echo "Automated regards" | mail -s "Le fichier Crontab a ete modifie" root
+fi
