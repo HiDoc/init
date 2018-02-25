@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo du -s /var/*
+sudo du -sh /var/*
