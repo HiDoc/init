@@ -1,1 +1,3 @@
+#!/bin/sh
+# Les entrees locales DNS se trouvent dans le fichier /etc/hosts
 cat /etc/hosts
