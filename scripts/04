@@ -1,11 +1,15 @@
 #!/bin/sh
 
 path=/etc/crontab
+store=/var/log
 
-sudo mv checknew checkold
-sudo md5sum $path > ./checknew
+sudo touch $store/checknew
+
+sudo mv $store/checknew $store/checkold
+sudo md5sum $path > .$store/checknew
+
 CHECKSUM=$(diff checknew checkold)
 
-if [ "x$CHECKSUM" != "x" ]; then
+if [ "s$CHECKSUM" != "s" ]; then
 	echo "Automated regards" | mail -s "Le fichier Crontab a ete modifie" root@localhost
 fi
