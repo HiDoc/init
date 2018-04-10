@@ -8,7 +8,7 @@ sudo touch $store/checknew
 sudo mv $store/checknew $store/checkold
 sudo md5sum $path > .$store/checknew
 
-CHECKSUM=$(diff checknew checkold)
+CHECKSUM=$(sudo diff $store/checknew $store/checkold)
 
 if [ "s$CHECKSUM" != "s" ]; then
 	echo "Automated regards" | mail -s "Le fichier Crontab a ete modifie" root@localhost
